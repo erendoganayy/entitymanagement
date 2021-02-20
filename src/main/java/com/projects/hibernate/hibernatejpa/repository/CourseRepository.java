@@ -45,18 +45,12 @@ return course;
 
     public void playWithEntityManager(){
             Course course=new Course("Web services in 100 steps ");
-            Course course2=new Course("Angular JS");
-             em.persist(course);
-             em.persist(course2);
+            em.persist(course);
 
-             em.flush();
-            course.setName("Web Services in 100 steps- UPDATED");
-            em.flush();
+             Course course2=findById(10001L);
+             course2.setName("ben update edildim walla knk");
 
-            em.flush();
-            em.detach(course2 );
-            course2.setName("Angular JS- UPDATED");
-            em.flush();
+
     }
 
 
